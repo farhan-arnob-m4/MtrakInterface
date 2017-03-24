@@ -1,45 +1,78 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#fdd706"
-    android:focusable="false"
-    android:focusableInTouchMode="false">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/text_large1"
-        android:hint="@string/hint_enter_site_code"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:singleLine="true"
-        android:imeOptions="actionNext"/>
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fdd706"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="center"
+        android:orientation="vertical">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/image_logo"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/logo_sps"
-        android:layout_marginBottom="30dp"
-        android:focusable="false"
-        android:focusableInTouchMode="false" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NEXT \u276f"
-        android:id="@+id/button_next"
-        android:background="@drawable/button"
-        android:padding="10dp"
-        android:textColor="#ffffff"
-        android:layout_below="@+id/text_large1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        android:layout_gravity="center"
+        android:layout_marginBottom="70dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/logo_sps" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:background="@android:color/white"
+            android:minWidth="200dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/list_view_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <ListView
+                android:id="@+id/list_view_for_site"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:divider="#FFF9C4"
+                android:dividerHeight="1dp">
+
+            </ListView>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@android:color/white"
+            android:minWidth="200dp"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/new_user_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:src="@drawable/new_user_fab_icon"
+        app:backgroundTint="@android:color/holo_red_dark"
+        app:layout_anchorGravity="bottom|right|end" />
 
 </RelativeLayout>
+
