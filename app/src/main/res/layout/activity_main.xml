@@ -18,46 +18,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="30dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/logo_sps" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:layout_marginBottom="12dp"
-            android:background="@android:color/white"
-            android:minWidth="200dp"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:background="@android:color/white"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="18sp"-->
+        <!--android:textStyle="bold" />-->
 
         <LinearLayout
             android:id="@+id/list_view_linear_layout"
             android:layout_width="match_parent"
-            android:layout_height="190dp">
+            android:layout_height="250dp">
 
             <ListView
                 android:id="@+id/list_view_for_site"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:divider="#FFF9C4"
-                android:dividerHeight="1dp">
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:divider="#fdd706"
+                android:footerDividersEnabled="true">
 
             </ListView>
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:layout_marginTop="12dp"
-            android:background="@android:color/white"
-            android:minWidth="200dp"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="@android:color/white"-->
+        <!--android:layout_marginLeft="20dp"-->
+        <!--android:layout_marginRight="20dp"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:textSize="18sp"-->
+        <!--android:textStyle="bold" />-->
 
 
     </LinearLayout>
