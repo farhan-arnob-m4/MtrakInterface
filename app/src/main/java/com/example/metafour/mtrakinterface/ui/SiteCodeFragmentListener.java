@@ -12,9 +12,10 @@ import android.widget.Toast;
 
 import com.example.metafour.mtrakinterface.R;
 import com.example.metafour.mtrakinterface.model.SiteCode;
+import com.example.metafour.mtrakinterface.model.db.DBHelper;
 
 /**
- * Created by metafour on 3/23/17.
+ * Created by farhan-arnob-m4 on 3/23/17.
  */
 
 public class SiteCodeFragmentListener extends DialogFragment{
@@ -23,6 +24,7 @@ public class SiteCodeFragmentListener extends DialogFragment{
     SiteCode siteCode;
     private Button newUserButton;
     private EditText newSiteCode;
+    private DBHelper dbHelper;
 
     @Nullable
     @Override
@@ -31,15 +33,21 @@ public class SiteCodeFragmentListener extends DialogFragment{
         siteCode = new SiteCode(getContext());
         newUserButton = (Button) siteView.findViewById(R.id.new_user_button);
         newSiteCode = (EditText) siteView.findViewById(R.id.text_large1);
+        dbHelper = new DBHelper(getContext());
         newUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "next Button", Toast.LENGTH_SHORT).show();
                 String newSiteText = newSiteCode.getText().toString();
-                if (newSiteText != null && !newSiteText.equals("")) {
+                if (!newSiteText.equals("") && newSiteText.length() == 6) {
+                    dbHelper.insertSiteCode(newSiteText);
                     siteCode.setListOfSiteCode(newSiteText);
                     newSiteCode.setText("");
+                    getActivity().finish();
+                    startActivity(getActivity().getIntent());
+                } else {
+                    Toast.makeText(getContext(), "Site code Error!", Toast.LENGTH_SHORT).show();
                 }
+                getDialog().dismiss();
             }
         });
         return siteView;

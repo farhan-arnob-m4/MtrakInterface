@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MtrakInterface</string>
     <string name="hint_enter_site_code">Site code</string>
+    <string name="action_reconfig">add new site</string>
+    <string name="action_logout">logout</string>
+    <string name="profile_message">profile</string>
+    <string name="button_next_text">NEXT \u276f</string>
+    <string name="button_next_array">\u276f</string>
 </resources>

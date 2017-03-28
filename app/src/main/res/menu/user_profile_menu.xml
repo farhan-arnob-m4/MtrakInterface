@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.metafour.mtrak.ui.EventInputActivity">
+
+
+    <item
+        android:id="@+id/action_new_config"
+        android:orderInCategory="7"
+        android:title="@string/action_reconfig"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="8"
+        android:title="@string/action_logout"
+        app:showAsAction="never" />
+</menu>

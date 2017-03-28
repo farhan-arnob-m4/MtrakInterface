@@ -1,26 +1,36 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center"
         android:background="#fdd706"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:gravity="center"
         android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/image_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/logo_sps" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center|bottom">
+
+            <ImageView
+                android:id="@+id/image_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="30dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/logo_sps" />
+        </LinearLayout>
+
 
         <!--<TextView-->
         <!--android:layout_width="match_parent"-->
@@ -35,7 +45,8 @@
         <LinearLayout
             android:id="@+id/list_view_linear_layout"
             android:layout_width="match_parent"
-            android:layout_height="278dp">
+            android:layout_height="190dp"
+            android:layout_marginBottom="130dp">
 
             <ListView
                 android:id="@+id/list_view_for_site"
@@ -60,7 +71,50 @@
         <!--android:textColor="@android:color/black"-->
         <!--android:textSize="18sp"-->
         <!--android:textStyle="bold" />-->
+        <LinearLayout
+            android:id="@+id/fist_site_code_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:paddingBottom="30dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="30dp">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:minWidth="100dp"
+                android:text="@string/hint_enter_site_code"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/text_large1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:hint="@string/hint_enter_site_code"
+                android:imeOptions="actionDone"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/new_user_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/button"
+                android:padding="10dp"
+                android:text="@string/button_next_text"
+                android:textColor="#ffffff" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -69,8 +123,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="bottom|right"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:src="@drawable/new_user_fab_icon"
         app:backgroundTint="@android:color/holo_red_dark"

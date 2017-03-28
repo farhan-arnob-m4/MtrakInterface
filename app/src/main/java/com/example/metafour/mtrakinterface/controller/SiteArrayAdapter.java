@@ -1,11 +1,13 @@
-package com.example.metafour.mtrakinterface.Controller;
+package com.example.metafour.mtrakinterface.controller;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.metafour.mtrakinterface.R;
@@ -35,6 +37,8 @@ public class SiteArrayAdapter extends ArrayAdapter<SiteDetails> {
         // Lookup view for data population
         TextView siteName = (TextView) convertView.findViewById(R.id.site_name);
         TextView siteCode = (TextView) convertView.findViewById(R.id.site_code);
+        LinearLayout app_layer = (LinearLayout) convertView.findViewById(R.id.list_item_layout_for_clicking_indicator);
+
 
         //changing typeface
         Typeface type = Typeface.createFromAsset(getContext().getAssets(),
@@ -44,7 +48,17 @@ public class SiteArrayAdapter extends ArrayAdapter<SiteDetails> {
         // Populate the data into the template view using the data object
         siteName.setText(singleSiteDetails.getSiteName());
         siteCode.setText(singleSiteDetails.getSiteCode());
+
+
+        app_layer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), ProfileActivity.class);
+                getContext().startActivity(i);
+            }
+        });
         // Return the completed view to render on screen
         return convertView;
     }
+
 }
