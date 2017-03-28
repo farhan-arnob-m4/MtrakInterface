@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:mrl_rippleColor="#9E9E9E"
+
         app:mrl_rippleOverlay="true">
 
         <LinearLayout
@@ -30,6 +31,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="6"
                     android:paddingLeft="20dp"
+                    android:paddingTop="4dp"
                     android:textAlignment="center"
                     android:textColor="#040404"
                     android:textSize="20sp"
