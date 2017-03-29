@@ -6,4 +6,6 @@
     <string name="profile_message">profile</string>
     <string name="button_next_text">NEXT \u276f</string>
     <string name="button_next_array">\u276f</string>
+    <string name="reconfig">reconfig</string>
+    <string name="delete">delete</string>
 </resources>

@@ -55,19 +55,18 @@ public class DBHelper extends SQLiteOpenHelper {
         return numRows;
     }
 
-    public boolean updateContact(Integer id, String name, String phone, String email, String street, String place) {
+    public boolean updateContact(Integer id, String siteCode) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SITE_CODE_COLUMN, name);
+        contentValues.put(SITE_CODE_COLUMN, siteCode);
         db.update(SITE_CODE_TABLE_NAME, contentValues, "id = ? ", new String[]{Integer.toString(id)});
         return true;
     }
 
-    public Integer deleteContact(Integer id) {
+    public Integer deleteContact(String siteCode) {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(SITE_CODE_TABLE_NAME,
-                "id = ? ",
-                new String[]{Integer.toString(id)});
+                SITE_CODE_COLUMN + " = ? ", new String[]{siteCode});
     }
 
     public ArrayList<SiteDetails> getAllSiteCode() {

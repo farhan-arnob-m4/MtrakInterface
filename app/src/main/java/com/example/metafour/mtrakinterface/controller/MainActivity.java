@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         siteCodeFragmentListener = new SiteCodeFragmentListener();
         fm = getSupportFragmentManager();
         list = siteCode.getListOfSiteCode();
-        adapter = new SiteArrayAdapter(getBaseContext(), list);
+        adapter = new SiteArrayAdapter(this, list);
         dbHelper = new DBHelper(getBaseContext());
 
 

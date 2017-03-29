@@ -11,32 +11,42 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:hint="site code"
         android:minWidth="100dp"
-        android:text="Enter new Site Code:"
         android:textColor="@android:color/black"
         android:textSize="18dp" />
 
-    <EditText
-        android:id="@+id/text_large1"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:hint="@string/hint_enter_site_code"
-        android:imeOptions="actionDone"
-        android:singleLine="true" />
+        android:layout_height="0dp"
+        android:layout_weight="2"
 
-    <Button
-        android:id="@+id/new_user_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/button"
-        android:padding="10dp"
-        android:text="NEXT \u276f"
-        android:textColor="#ffffff" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/button"
+            android:text="@string/delete"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/reconfigure_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:background="@drawable/button"
+            android:text="@string/reconfig"
+            android:textColor="#ffffff" />
+    </LinearLayout>
 
 
 </LinearLayout>
