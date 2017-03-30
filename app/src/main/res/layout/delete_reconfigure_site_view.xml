@@ -12,6 +12,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:minWidth="100dp"
+        android:text="site code:"
+        android:textColor="@android:color/black"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/text_view_for_delete_or_reconfig_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginBottom="30dp"
         android:gravity="center"
         android:hint="site code"

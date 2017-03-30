@@ -78,7 +78,7 @@ public class DBHelper extends SQLiteOpenHelper {
         int i = 0;
         while (!res.isAfterLast()) {
             String sideCode = res.getString(res.getColumnIndex(SITE_CODE_COLUMN));
-            array_list.add(new SiteDetails("iTrakII - " + sideCode, "Pfizer Australia"));
+            array_list.add(new SiteDetails(sideCode, "Pfizer Australia"));
             res.moveToNext();
         }
         res.close();

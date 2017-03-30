@@ -5,8 +5,8 @@ package com.example.metafour.mtrakinterface.model;
  */
 
 public class SiteDetails {
-    private String siteName = "Pfizer Australia";
-    private String siteCode = "iTrakII - it2930";
+    private String siteName;
+    private String siteCode;
 
     public SiteDetails(String siteCode, String siteName) {
         this.siteCode = siteCode;

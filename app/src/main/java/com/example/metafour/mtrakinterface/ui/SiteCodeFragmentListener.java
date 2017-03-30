@@ -29,7 +29,7 @@ public class SiteCodeFragmentListener extends DialogFragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
-        siteView = inflater.inflate(R.layout.site_view,null);
+        siteView = inflater.inflate(R.layout.site_view_new, null);
         siteCode = new SiteCode(getContext());
         newUserButton = (Button) siteView.findViewById(R.id.new_user_button);
         newSiteCode = (EditText) siteView.findViewById(R.id.text_large1);

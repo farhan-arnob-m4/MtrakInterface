@@ -3,6 +3,7 @@ package com.example.metafour.mtrakinterface.controller;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -26,7 +27,7 @@ public class SiteArrayAdapter extends ArrayAdapter<SiteDetails> {
     String TAG = SiteArrayAdapter.this.getClass().getSimpleName();
     private DeleteReconfigureSiteCodeFragmentListener deleteReconfigureSiteCodeFragmentListener;
     private FragmentManager fm;
-    private String DIALOGUE = "DIALOGUE";
+    private String DIALOGUE = "delete_or_reconfig_fragment";
     public SiteArrayAdapter(Context context, ArrayList<SiteDetails> sites) {
         super(context, 0, sites);
         //initialize DeleterReconfig... fragment
@@ -38,7 +39,7 @@ public class SiteArrayAdapter extends ArrayAdapter<SiteDetails> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        SiteDetails singleSiteDetails = getItem(position);
+        final SiteDetails singleSiteDetails = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.custom_layout_for_site_code, parent, false);
@@ -59,7 +60,7 @@ public class SiteArrayAdapter extends ArrayAdapter<SiteDetails> {
         siteName.setTypeface(type);
         // Populate the data into the template view using the data object
         siteName.setText(singleSiteDetails.getSiteName());
-        siteCode.setText(singleSiteDetails.getSiteCode());
+        siteCode.setText("iTrakII - " + singleSiteDetails.getSiteCode());
 
         // going next activity
         app_layer.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +75,10 @@ public class SiteArrayAdapter extends ArrayAdapter<SiteDetails> {
         app_layer.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
+                // Supply num input as an argument.
+                Bundle args = new Bundle();
+                args.putString("textForTextView", singleSiteDetails.getSiteCode());
+                deleteReconfigureSiteCodeFragmentListener.setArguments(args);
                 deleteReconfigureSiteCodeFragmentListener.show(fm, TAG);
                 return true;
             }

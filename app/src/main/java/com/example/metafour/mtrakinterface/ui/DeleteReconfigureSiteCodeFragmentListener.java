@@ -7,10 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.metafour.mtrakinterface.R;
-import com.example.metafour.mtrakinterface.model.SiteCode;
 import com.example.metafour.mtrakinterface.model.db.DBHelper;
 
 /**
@@ -20,35 +20,30 @@ import com.example.metafour.mtrakinterface.model.db.DBHelper;
 public class DeleteReconfigureSiteCodeFragmentListener extends DialogFragment {
 
     View siteView;
-    SiteCode siteCode;
-    private Button newUserButton;
-    private EditText newSiteCode;
+    private Button deleteButton;
     private DBHelper dbHelper;
-
+    private TextView textView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
+        String textViewString = getArguments().getString("textForTextView");
         siteView = inflater.inflate(R.layout.delete_reconfigure_site_view, null);
-//        siteCode = new SiteCode(getContext());
-//        newUserButton = (Button) siteView.findViewById(R.id.new_user_button);
-//        newSiteCode = (EditText) siteView.findViewById(R.id.text_large1);
-//        dbHelper = new DBHelper(getContext());
-//        newUserButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String newSiteText = newSiteCode.getText().toString();
-//                if (!newSiteText.equals("") && newSiteText.length() == 6) {
-//                    dbHelper.insertSiteCode(newSiteText);
-//                    siteCode.setListOfSiteCode(newSiteText);
-//                    newSiteCode.setText("");
-//                    getActivity().finish();
-//                    startActivity(getActivity().getIntent());
-//                } else {
-//                    Toast.makeText(getContext(), "Site code Error!", Toast.LENGTH_SHORT).show();
-//                }
-//                getDialog().dismiss();
-//            }
-//        });
+        dbHelper = new DBHelper(getContext());
+        deleteButton = (Button) siteView.findViewById(R.id.delete_button);
+        textView = (TextView) siteView.findViewById(R.id.text_view_for_delete_or_reconfig_fragment);
+        textView.setText(textViewString);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (dbHelper.deleteContact(textView.getText().toString()) != 0) {
+                    Toast.makeText(getContext(), "successfully deleted", Toast.LENGTH_SHORT).show();
+                    getActivity().finish();
+                    startActivity(getActivity().getIntent());
+                }
+            }
+        });
+
+
         return siteView;
     }
 }
